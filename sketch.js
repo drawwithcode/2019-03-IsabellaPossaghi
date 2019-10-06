@@ -15,6 +15,7 @@ class bubble {
     this.diameter = Math.floor(Math.random() * 50);
     this.xvel = Math.abs(Math.random() * 25);
     this.yvel = Math.abs(Math.random() * 25);
+    
   }
 
 
@@ -23,7 +24,9 @@ class bubble {
     //ellipse position (this.x, this.y) and ellipse dimensions (this.diameter, this.diameter)
     ellipse(this.x, this.y, this.diameter, this.diameter);
     //fill with random colors
-    fill(random() * 255, random() * 255, 255);
+    fill(Math.random() * 255, Math.random() * 255, 255);
+
+
   }
 
 
@@ -51,9 +54,10 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background("black");
   //Create an object called "bubble" based on the "bubble" class
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 200; i++) {
     bubbles[i] = new bubble();
   }
+
 }
 
 function draw() {
@@ -61,7 +65,7 @@ function draw() {
   translate(width / 2, height / 2);
   rotate(frameCount);
   angleMode(DEGREES);
- //create a spiral!
+  //create a spiral!
   let x = 0;
   let y = 0;
   let r = 0;
@@ -69,8 +73,12 @@ function draw() {
   let lastX, lastY;
 
   strokeWeight(20);
-  //spiral color
-  stroke("black");
+  //mouse pressed = change spiral color
+  if (mouseIsPressed) {
+    stroke("white");
+  } else {
+    stroke("black");
+  }
 
   for (let i = 0; i < windowHeight; i++) {
     lastX = x;
@@ -80,15 +88,16 @@ function draw() {
     y = sin(a) * r;
     line(lastX, lastY, x, y);
 
-    a += 8; //a = a+8
-    r += 2; //r = r+2
+    a += 6; //a = a+6
+    r += 1; //r = r+1
   }
 
   //bubbles show + move
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 200; i++) {
     noStroke()
     bubbles[i].move()
     bubbles[i].show()
   }
+
 
 }
