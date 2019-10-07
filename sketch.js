@@ -3,6 +3,7 @@ let a = 0;
 let t = 0;
 
 let bubbles = [];
+let amountOfBubbles = 200;
 
 
 class bubble {
@@ -15,7 +16,8 @@ class bubble {
     this.diameter = Math.floor(Math.random() * 50);
     this.xvel = Math.abs(Math.random() * 25);
     this.yvel = Math.abs(Math.random() * 25);
-    
+
+
   }
 
 
@@ -26,7 +28,9 @@ class bubble {
     //fill with random colors
     fill(Math.random() * 255, Math.random() * 255, 255);
 
-
+    if (mouseIsPressed) {
+      fill(255, Math.random() * 255, Math.random() * 255);
+    }
   }
 
 
@@ -54,9 +58,10 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background("black");
   //Create an object called "bubble" based on the "bubble" class
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < amountOfBubbles; i++) {
     bubbles[i] = new bubble();
   }
+
 
 }
 
@@ -73,6 +78,7 @@ function draw() {
   let lastX, lastY;
 
   strokeWeight(20);
+
   //mouse pressed = change spiral color
   if (mouseIsPressed) {
     stroke("white");
@@ -97,6 +103,7 @@ function draw() {
     noStroke()
     bubbles[i].move()
     bubbles[i].show()
+
   }
 
 
