@@ -1,7 +1,5 @@
 //bubbles variables
-let r = 0;
-let a = 0;
-let t = 0;
+
 let bubbles = [];
 let amountOfBubbles = 200;
 
@@ -99,9 +97,9 @@ function draw() {
 
   //bubbles show + move
   for (let i = 0; i < 200; i++) {
-    noStroke()
-    bubbles[i].move()
-    bubbles[i].show()
+    noStroke();
+    bubbles[i].move();
+    bubbles[i].show();
 
   }
 }
