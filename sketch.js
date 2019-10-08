@@ -93,7 +93,7 @@ function draw() {
     y = sin(a) * r;
     line(lastX, lastY, x, y);
 
-    a += 6; //a = a+6
+    a += 6; //a = a+6, space between bows
     r += 1; //r = r+1
   }
 
