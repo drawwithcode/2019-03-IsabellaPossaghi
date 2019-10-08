@@ -1,7 +1,7 @@
+//bubbles variables
 let r = 0;
 let a = 0;
 let t = 0;
-
 let bubbles = [];
 let amountOfBubbles = 200;
 
@@ -16,10 +16,7 @@ class bubble {
     this.diameter = Math.floor(Math.random() * 50);
     this.xvel = Math.abs(Math.random() * 25);
     this.yvel = Math.abs(Math.random() * 25);
-
-
   }
-
 
   show() { //bubbles appearance where + how
 
@@ -28,7 +25,7 @@ class bubble {
 
     //fill with random colors
     fill(Math.random() * 255, Math.random() * 255, 255);
-
+    //some mouse magic
     if (mouseIsPressed) {
       fill(255, Math.random() * 255, Math.random() * 255);
     }
@@ -72,6 +69,7 @@ function draw() {
   rotate(frameCount);
   angleMode(DEGREES);
   //create a spiral!
+  //spiral variables
   let x = 0;
   let y = 0;
   let r = 0;
@@ -80,7 +78,7 @@ function draw() {
 
   strokeWeight(20);
 
-  //mouse pressed = change spiral color
+  ////some mouse magic pt.2
   if (mouseIsPressed) {
     stroke("white");
   } else {
@@ -106,6 +104,4 @@ function draw() {
     bubbles[i].show()
 
   }
-
-
 }
