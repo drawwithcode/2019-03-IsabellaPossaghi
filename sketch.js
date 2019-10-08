@@ -25,6 +25,7 @@ class bubble {
 
     //ellipse position (this.x, this.y) and ellipse dimensions (this.diameter, this.diameter)
     ellipse(this.x, this.y, this.diameter, this.diameter);
+
     //fill with random colors
     fill(Math.random() * 255, Math.random() * 255, 255);
 
